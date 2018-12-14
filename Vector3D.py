@@ -14,8 +14,10 @@ class Vector3D:
         
         return Vector3D( self.x1-v2.x1, self.x2-v2.x2, self.x3-v2.x3 )
     def __mul__(self,v2):
-        return Vector3D(self.x2*v2.x3,self.x3*v2.x1,self.x1*v2.x2)
+        return Vector3D(self.x1*v2,self.x2*v2,self.x3*v2)
     def dot(self,v2):
-        return elf.x1*v2.x1+self.x2*v2.x2+self.x3*v2.x3
+        return self.x1*v2.x1+self.x2*v2.x2+self.x3*v2.x3
     def norm(self):
         return (self.x1**2+self.x2**2+self.x3**2)**0.5
+    def __str__(self):
+        return f"[{self.x1},{self.x2},{self.x3}]"
